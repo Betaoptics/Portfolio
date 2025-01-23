@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio</title>
+</head>
+
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <p>Welcome to my personal portfolio website</p>
+    </header>
+    <div class="sticky">
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#technologies">Technologies</a>
+            <a href="#contact">Contact</a>
+            <a href="https://github.com/Betaoptics/" target="_blank">
+                <p>Github</p>
+                <img src="images/github-mark/github-mark-white.svg" alt="GitHub Logo" style="width:24px; height:24px;">
+            </a>
+            <a href="https://www.linkedin.com/in/joonas-niinim%C3%A4ki-software-developer/" target="_blank">
+                <p>LinkedIn</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                    alt="LinkedIn Logo" style="width:24px; height:24px;">
+            </a>
+        </nav>
+    </div>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi! I'm a passionate developer who loves building web applications and exploring new technologies. I enjoy
+            solving problems and bringing ideas to life through code.</p>
+    </section>
+
+    <!-- Cool Coding Animation Section -->
+    <div class="coding-animation-container">
+        <p class="code-line">
+            console.log('Welcome to My Portfolio!');<br>
+            const skills = ['HTML', 'CSS', 'JavaScript', 'React'];<br>
+            skills.forEach(skill => console.log(skill));<br>
+        </p>
+    </div>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <h3>Project 1</h3>
+            <p>Description of the first project. This project demonstrates my skills in frontend development.</p>
+        </div>
+        <div class="project-card">
+            <h3>Project 2</h3>
+            <p>Description of the second project. This project showcases my expertise in backend programming.</p>
+        </div>
+        <div class="project-card">
+            <h3>Project 3</h3>
+            <p>Description of the third project. This project highlights my ability to work with databases.</p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <p>placeholder</p>
+    </section>
+
+    <section id="technologies">
+        <h2>Technologies</h2>
+        <p>placeholder</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me via email at <a href="mailto:youremail@example.com">youremail@example.com</a>.
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling with offset for #projects and #contact
+        const OFFSET = 100; // Adjust this value for the desired space above the sections
+
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+
+                if (targetId === 'about') {
+                    // Scroll to the very top of the page
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Scroll with offset for projects and contact sections
+                    const targetSection = document.getElementById(targetId);
+                    const topOffset = targetSection.offsetTop - OFFSET;
+
+                    window.scrollTo({
+                        top: topOffset,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
