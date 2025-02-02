@@ -21,11 +21,11 @@
             <a href="#technologies">Technologies</a>
             <a href="#contact">Contact</a>
             <a href="https://github.com/Betaoptics/" target="_blank">
-                <p>Github</p>
+                <!-- <p>Github</p> -->
                 <img src="images/github-mark/github-mark-white.svg" alt="GitHub Logo" style="width:24px; height:24px;">
             </a>
             <a href="https://www.linkedin.com/in/joonas-niinim%C3%A4ki-software-developer/" target="_blank">
-                <p>LinkedIn</p>
+                <!-- <p>LinkedIn</p> -->
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
                     alt="LinkedIn Logo" style="width:24px; height:24px;">
             </a>
@@ -41,7 +41,7 @@
     <div class="coding-animation-container">
         <p class="code-line">
             console.log('Welcome to My Portfolio!');<br>
-            const skills = ['HTML', 'CSS', 'JavaScript', 'React'];<br>
+            const skills = ['HTML', 'CSS','JavaScript', 'React'];<br>
             skills.forEach(skill => console.log(skill));<br>
         </p>
     </div>
@@ -82,34 +82,42 @@
         <p>&copy; 2025 Your Name. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Smooth scrolling with offset for #projects and #contact
+    <!-- <script>
+        // Smooth scrolling with offset for internal sections
         const OFFSET = 100; // Adjust this value for the desired space above the sections
 
         document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
+            const href = anchor.getAttribute('href');
 
-                if (targetId === 'about') {
-                    // Scroll to the very top of the page
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                } else {
-                    // Scroll with offset for projects and contact sections
-                    const targetSection = document.getElementById(targetId);
-                    const topOffset = targetSection.offsetTop - OFFSET;
+            // Apply smooth scrolling only to internal links (starting with #)
+            if (href.startsWith("#")) {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = href.substring(1);
 
-                    window.scrollTo({
-                        top: topOffset,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+                    if (targetId === 'about') {
+                        // Scroll to the very top of the page
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        // Scroll with offset for other sections
+                        const targetSection = document.getElementById(targetId);
+                        if (targetSection) {
+                            const topOffset = targetSection.offsetTop - OFFSET;
+                            window.scrollTo({
+                                top: topOffset,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            }
         });
-    </script>
+    </script> -->
+
+    <script src="scripts/nav_scipt.js"></script>
 </body>
 
 </html>

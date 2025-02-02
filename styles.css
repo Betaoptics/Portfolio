@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+:root {
+    --glow-color: cyan;
+    /* Default outer glow color */
+    --inner-glow: rgba(200, 255, 255, 0.9);
+    /* Light cyan/white inner glow */
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -37,7 +44,8 @@ nav a {
 
 nav a:hover {
     /* background: #003f8a; */
-    background: #004d4d;
+    /* background: #008c8c; */
+    background: #006464;
 }
 
 section {
@@ -87,17 +95,76 @@ footer {
     padding: 20px;
     border-radius: 8px;
     margin: 20px auto;
-    max-width: 55vw;
-    /* max-width: 600px; */
+    /* Allows height expansion */
+    max-width: 50vw;
     position: relative;
     overflow: hidden;
     z-index: -1;
+    min-height: 100px;
+    /* Allows height expansion */
+
+    /* Glowing border effect */
+    border: 2px solid var(--glow-color);
+    box-shadow:
+        0 0 5px var(--inner-glow),
+        /* Soft white/very light cyan inner glow */
+        0 0 15px var(--glow-color),
+        /* Medium cyan glow */
+        0 0 30px var(--glow-color),
+        /* Stronger cyan glow */
+        0 0 50px rgba(0, 255, 255, 0.6);
+    /* Outer faint cyan glow */
+    animation: glow-animation 1.5s infinite alternate;
+}
+
+/* Animation to enhance the glowing effect */
+@keyframes glow-animation {
+    0% {
+        box-shadow:
+            0 0 5px var(--inner-glow),
+            0 0 15px var(--glow-color),
+            0 0 30px var(--glow-color),
+            0 0 50px rgba(0, 255, 255, 0.6);
+    }
+
+    50% {
+        box-shadow:
+            0 0 8px var(--inner-glow),
+            0 0 20px var(--glow-color),
+            0 0 40px var(--glow-color),
+            0 0 60px rgba(0, 255, 255, 0.8);
+    }
+
+    100% {
+        box-shadow:
+            0 0 5px var(--inner-glow),
+            0 0 15px var(--glow-color),
+            0 0 30px var(--glow-color),
+            0 0 50px rgba(0, 255, 255, 0.6);
+    }
+}
+
+/* Color variations */
+.glow-red {
+    --glow-color: red;
+    --inner-glow: rgba(255, 200, 200, 0.9);
+}
+
+.glow-blue {
+    --glow-color: blue;
+    --inner-glow: rgba(200, 200, 255, 0.9);
+}
+
+.glow-green {
+    --glow-color: lime;
+    --inner-glow: rgba(200, 255, 200, 0.9);
 }
 
 .code-line {
+    display: block;
     white-space: nowrap;
     overflow: hidden;
-    /* border-right: 2px solid #00ff6a; */
+    border-right: 2px solid #00ff6a;
     border-right: 2px solid #00dbdb;
     animation: typing 3.5s steps(40, end), blink 0.5s step-end infinite;
 }
