@@ -238,7 +238,7 @@ footer {
 
 .dark-mode canvas {
     background: #222;
-    border: 1px solid #555;
+    /* border: 1px solid #555; */
 }
 
 .dark-mode .email-link {
