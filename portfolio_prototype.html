@@ -10,11 +10,17 @@
 </head>
 
 <body>
-    <header>
-        <h1>My Portfolio</h1>
-        <p>Welcome to my personal portfolio website</p>
-    </header>
     <div class="sticky">
+        <header>
+            <h1>My Portfolio</h1>
+            <p>Welcome to my personal portfolio website</p>
+            <!-- Rounded switch -->
+            <label class="switch">
+                <input type="checkbox" onclick="toggleDarkMode()">
+                <span class="slider round"></span>
+            </label>
+        </header>
+
         <nav>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
@@ -82,8 +88,8 @@
 
     <section id="contact">
         <h2>Contact</h2>
-        <p>Feel free to reach out to me via email at <a href="mailto:youremail@example.com">youremail@example.com</a>.
-        </p>
+        <p>Feel free to reach out to me via email at
+        <p>Contact: <a href="placeholder@example.com" class="email-link">placeholder@example.com</a></p>
     </section>
 
     <footer>
@@ -127,6 +133,11 @@
 
     <script src="scripts/nav_scipt.js"></script>
     <script type="module" src="scripts/draw_graph.js"></script>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
 </body>
 
 </html>
