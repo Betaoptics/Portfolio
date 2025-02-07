@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Portfolio</title>
 </head>
@@ -44,6 +45,13 @@
             const skills = ['HTML', 'CSS','JavaScript', 'React'];<br>
             skills.forEach(skill => console.log(skill));<br>
         </p>
+    </div>
+
+    <div id="line-graph-card">
+        <div id="line-graph-wrapper">
+            <!-- <div class="buttons" id="buttonContainer"></div> -->
+            <canvas id="line-graph-canvas"></canvas>
+        </div>
     </div>
 
     <section id="projects">
@@ -118,6 +126,7 @@
     </script> -->
 
     <script src="scripts/nav_scipt.js"></script>
+    <script type="module" src="scripts/draw_graph.js"></script>
 </body>
 
 </html>

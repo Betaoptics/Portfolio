@@ -184,3 +184,50 @@ footer {
         border-color: transparent;
     }
 }
+
+#line-graph-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    height: 68vh;
+    /* background-color: #f4f4f4; */
+}
+
+#line-graph-canvas {
+    background: white;
+    /* border: 1px solid #ccc; */
+    width: 90vw;
+    height: 200px;
+}
+
+#line-graph-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    margin-top: 3rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    /* width: 300px; */
+}
+
+/* .buttons {
+    margin-bottom: 10px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+} */
