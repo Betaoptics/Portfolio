@@ -1,3 +1,90 @@
+/* .content {
+    background-color: rgba(255, 255, 255, 1.0);
+    border-radius: .25em;
+    box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+    box-sizing: border-box;
+    left: 50%;
+    padding: 10vmin;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+.content {
+    background-color: rgba(255, 255, 255, 1.0);
+    border-radius: 1vw;
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    min-width: 20vw;
+    width: 80vw;
+    max-width: 90vw;
+    /* Ensures flexibility */
+    max-height: 90vh;
+    /* Restricts height for potential overflow */
+    left: 50%;
+    /* padding: 5vh 5vw; */
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 2vw;
+    overflow: hidden;
+    /* Initially hides overflow */
+}
+
+/* Ensures scrolling only applies to the non-sticky part */
+.content-inner {
+    /* Allows it to take up remaining space */
+    /* flex: 1; */
+    width: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    /* Enables vertical scrolling inside */
+    /* Prevents content from touching the scrollbar */
+    /* padding-right: 1vw; */
+    border-radius: inherit;
+    /* Keeps the inner div rounded */
+}
+
+
+/* Hide scrollbar but keep functionality */
+.content-inner::-webkit-scrollbar {
+    width: 0;
+    /* Hides the scrollbar */
+}
+
+.content-inner {
+    -ms-overflow-style: none;
+    /* Hides the scrollbar in Internet Explorer */
+    scrollbar-width: none;
+    /* Hides the scrollbar in Firefox */
+}
+
+/* Exclude .sticky from scrolling */
+.content-inner .sticky {
+    position: relative;
+    overflow: visible;
+}
+
+/* Custom Scrollbar */
+.content-inner::-webkit-scrollbar {
+    width: 0.6vw;
+}
+
+.content-inner::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 1vw;
+}
+
+.content-inner::-webkit-scrollbar-track {
+    background: transparent;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -67,6 +154,7 @@ section {
 div.sticky {
     position: sticky;
     top: 0;
+    z-index: 100;
 }
 
 .project-card {
@@ -74,7 +162,10 @@ div.sticky {
     margin: 1rem;
     padding: 1rem;
     border: 1px solid #ccc;
+    /* background-color: #eef4f8b7; */
+    background-color: #f4f4f4;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     width: 300px;
 }
 
@@ -99,7 +190,9 @@ footer {
     max-width: 50vw;
     position: relative;
     overflow: hidden;
-    z-index: -1;
+    /* z-index: -1; */
+    z-index: 10;
+    /* Make sure it appears above other elements */
     min-height: 100px;
     /* Allows height expansion */
 
@@ -185,34 +278,43 @@ footer {
     }
 }
 
-#line-graph-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* height: 100vh; */
-    /* height: 68vh; */
-    /* background-color: #f4f4f4; */
-}
-
-#line-graph-canvas {
-    /* background: white;
-    background: #111314;
-    background: #1b1d1f; */
-    /* border: 1px solid #ccc; */
-    width: 90vw;
-    height: 200px;
-}
-
+/* Style for the line-graph card container */
 #line-graph-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem;
-    margin-top: 3rem;
-    padding: 1rem;
+    width: 100%;
+    max-width: 800px;
+    /* Limit the max width of the card */
+    height: 400px;
+    /* Set a fixed height for the graph */
+    margin: 20px auto;
+    /* Center the card on the page */
+    /* Optional: background color */
+    border-radius: 10px;
+    /* Optional: rounded corners for the card */
+    overflow: hidden;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    /* width: 300px; */
+    /* background-color: #eef4f8b7; */
+    background-color: #f4f4f4;
+    /* Prevents anything from overflowing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    /* Optional: shadow for aesthetics */
+}
+
+/* Wrapper inside the line-graph card */
+#line-graph-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* Ensures that no content overflows from the wrapper */
+}
+
+/* Style for the canvas inside the line-graph card */
+#line-graph-canvas {
+    width: 100%;
+    /* Make the canvas fill the container width */
+    height: 100%;
+    /* Make the canvas fill the container height */
+    display: block;
+    /* Remove any extra space below the canvas */
 }
 
 .toggle-btn {
@@ -237,7 +339,7 @@ footer {
 }
 
 .dark-mode canvas {
-    background: #222;
+    background: #111;
     /* border: 1px solid #555; */
 }
 
@@ -252,6 +354,42 @@ footer {
 .dark-mode footer {
     background-color: #111;
     color: white;
+}
+
+.dark-mode .content {
+    /* background-color: #333; */
+    background-color: #222;
+    color: white;
+}
+
+.dark-mode .content-inner {
+    /* background-color: #333; */
+    background-color: #222;
+    color: white;
+}
+
+/* Exclude the coding animation container from dark mode */
+.dark-mode .coding-animation-container {
+    background-color: #1e1e1e;
+    /* Keep original background */
+    color: #00dbdb;
+    /* Keep original text color */
+}
+
+.dark-mode .coding-animation-container .code-line {
+    color: #00dbdb;
+    /* Retain the text color inside the animation container */
+}
+
+/* Ensure no other dark mode styles are applied to .coding-animation-container */
+.dark-mode .coding-animation-container * {
+    color: inherit;
+    background-color: inherit;
+}
+
+.dark-mode .project-card {
+    background-color: #111;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
 }
 
 /* .buttons {
@@ -271,6 +409,18 @@ button {
 
 button:hover {
     background-color: #0056b3;
+} */
+
+/* #foreground {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin: 50px auto;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 } */
 
 /* The switch - the box around the slider */
