@@ -185,7 +185,7 @@ const lineChart = new Chart(ctx, {
         // },
 
         datasets: Object.keys(technologies).map((key, index) => ({
-            label: key,
+            label: key === 'C_Plus_Plus' ? 'C++' : key === 'C_Sharp' ? 'C#' : key,
             data: technologies[key],
             borderColor: ['purple', 'blue', 'green', 'red', 'yellow', 'cyan'][index % 6],
             borderWidth: 2,
