@@ -159,14 +159,39 @@ div.sticky {
 
 .project-card {
     display: inline-block;
+    overflow: hidden;
     margin: 1rem;
-    padding: 1rem;
+    /* padding: 1rem; */
     border: 1px solid #ccc;
     /* background-color: #eef4f8b7; */
     background-color: #f4f4f4;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    width: 300px;
+    width: 400px;
+}
+
+.project-card-image {
+    transition: 1.5s;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* This to make background image size to cover all dimension of div element.*/
+}
+
+.project-card-image:hover {
+    transform: scale(1.1);
+    transform: translate(0, -200px);
+    /* transform: scale(1.1, 1.0); */
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.project-card-text {
+    padding: 1rem 1rem 1rem 1rem;
+    /* Order: top right bottom left*/
+
 }
 
 footer {

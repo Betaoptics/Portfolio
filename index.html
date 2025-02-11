@@ -13,33 +13,39 @@
 <body>
     <div class="sticky">
         <header>
-            <h1>My Portfolio</h1>
-            <p>Welcome to my personal portfolio website</p>
-            <i class="fa fa-sun-o" style="font-size:30px;color: #ffffff; position: relative; "></i>
-            <!-- Rounded switch -->
-            <label class="switch">
-                <input type="checkbox" onclick="toggleDarkMode()">
-                <span class="slider round"></span>
-            </label>
-            <i class="fa fa-moon-o" style="font-size:30px;color: #ffffff; position: relative; "></i>
-        </header>
+            <div">
+                <div>
+                    <h1>My Portfolio</h1>
+                    <p>Welcome to my personal portfolio website</p>
+                </div>
+                <div style="display:flex; align-items: center; gap: 1rem; justify-content: center;">
+                    <i class="fa fa-sun-o" style="font-size:30px; color:#ffffff; text-align: center; "></i>
+                    <!-- Rounded switch -->
+                    <label class="switch">
+                        <input type="checkbox" onclick="toggleDarkMode()">
+                        <span class="slider round"></span>
+                    </label>
+                    <i class="fa fa-moon-o" style="font-size:30px; color:#ffffff;"></i>
+                </div>
+    </div>
+    </header>
 
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#technologies">Technologies</a>
-            <a href="#contact">Contact</a>
-            <a href="https://github.com/Betaoptics/" target="_blank">
-                <!-- <p>Github</p> -->
-                <img src="images/github-mark/github-mark-white.svg" alt="GitHub Logo" style="width:24px; height:24px;">
-            </a>
-            <a href="https://www.linkedin.com/in/joonas-niinim%C3%A4ki-software-developer/" target="_blank">
-                <!-- <p>LinkedIn</p> -->
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                    alt="LinkedIn Logo" style="width:24px; height:24px;">
-            </a>
-        </nav>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#technologies">Technologies</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/Betaoptics/" target="_blank">
+            <!-- <p>Github</p> -->
+            <img src="images/github-mark/github-mark-white.svg" alt="GitHub Logo" style="width:24px; height:24px;">
+        </a>
+        <a href="https://www.linkedin.com/in/joonas-niinim%C3%A4ki-software-developer/" target="_blank">
+            <!-- <p>LinkedIn</p> -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                alt="LinkedIn Logo" style="width:24px; height:24px;">
+        </a>
+    </nav>
     </div>
 
 
@@ -176,19 +182,34 @@
         <section id="projects">
             <h2>Projects</h2>
             <div class="project-card">
-                <h3>Project 1</h3>
-                <p>Description of the first project. This project demonstrates my skills in frontend
-                    development.</p>
+                <div class="project-card-image">
+                    <a><img src="images/image1.png" alt="img1" style="width:100%"></a>
+                </div>
+                <div class="project-card-text">
+                    <h3>Project 1</h3>
+                    <p>Description of the first project. This project demonstrates my skills in frontend
+                        development.</p>
+                </div>
             </div>
             <div class="project-card">
-                <h3>Project 2</h3>
-                <p>Description of the second project. This project showcases my expertise in backend
-                    programming.</p>
+                <div class="project-card-image">
+                    <a><img src="images/bw_image1.png" alt="img2" style="width:100%"></a>
+                </div>
+                <div class="project-card-text">
+                    <h3>Project 2</h3>
+                    <p>Description of the second project. This project showcases my expertise in backend
+                        programming.</p>
+                </div>
             </div>
             <div class="project-card">
-                <h3>Project 3</h3>
-                <p>Description of the third project. This project highlights my ability to work with databases.
-                </p>
+                <div class="project-card-image">
+                    <a><img src="images/image1.png" alt="img3" style="width:100%"></a>
+                </div>
+                <div class="project-card-text">
+                    <h3>Project 3</h3>
+                    <p>Description of the third project. This project highlights my ability to work with databases.
+                    </p>
+                </div>
             </div>
         </section>
 
