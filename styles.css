@@ -180,7 +180,7 @@ div.sticky {
 
 .project-card-image:hover {
     transform: scale(1.1);
-    transform: translate(0, -200px);
+    /* transform: translate(0, -200px); */
     /* transform: scale(1.1, 1.0); */
     overflow: hidden;
     background-repeat: no-repeat;
