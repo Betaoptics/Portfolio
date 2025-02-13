@@ -1,3 +1,6 @@
+// console.log('Welcome to Joonas Niinimäki porfolio!');
+// const skills = ['React', 'Node.js', 'Python', 'Javascript'];
+// skills.forEach(skill => console.log(skill));
 
 // Smooth scrolling with offset for internal sections
 const OFFSET = 100; // Adjust this value for the desired space above the sections
