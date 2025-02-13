@@ -102,7 +102,7 @@ header {
 #displayBanner {
     position: absolute;
     /* top: -115px; */
-    top: -50%;
+    top: -70%;
     left: 0;
     width: 100vw;
     height: 30vh;
