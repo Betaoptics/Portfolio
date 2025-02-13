@@ -15,18 +15,23 @@
 
     <div class="sticky">
         <header>
-            <h1>My Portfolio</h1>
-            <p>Welcome to my personal portfolio website</p>
+            <img id="displayBanner" src="images/linkedin_banner_1.png"
+                style="margin: 0rem; padding: 0rem; width: 100vw; height: auto;">
+            <!-- <div id="bannerContents">
+                <h1>My Portfolio</h1>
+                <p>Welcome to my personal portfolio website</p>
+            </div> -->
             <!-- Cool Coding Animation Section -->
             <!-- <div class="coding-animation-container">
-                        <p class="code-line">
-                            console.log('Welcome to Joonas Niinimäki porfolio!');<br>
-                            const skills = ['React', 'Node.js', 'Python', 'Javascript'];<br>
-                            skills.forEach(skill => console.log(skill));<br>
-                        </p>
-                    </div>
-                </div> -->
-            <div style="display:flex; align-items: center; gap: 1rem; justify-content: center;">
+                            <p class="code-line">
+                                console.log('Welcome to Joonas Niinimäki porfolio!');<br>
+                                const skills = ['React', 'Node.js', 'Python', 'Javascript'];<br>
+                                skills.forEach(skill => console.log(skill));<br>
+                            </p>
+                        </div>
+                    </div> -->
+            <!-- <div id="toggleDarkMode" style="display:flex; align-items: center; gap: 1rem; justify-content: center;"> -->
+            <div id="toggleDarkMode">
                 <i class="fa fa-sun-o" style="font-size:30px; color:#ffffff; text-align: center; "></i>
                 <!-- Rounded switch -->
                 <label class="switch">
@@ -38,19 +43,25 @@
         </header>
 
         <nav>
-            <a class="hover-3" href="#about">About</a>
+            <!-- <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#experience">Experience</a>
             <a href="#technologies">Technologies</a>
-            <a href="#contact">Contact</a>
+            <a href="#contact">Contact</a> -->
+            <a href="#about"><span>About</span></a>
+            <a href="#projects"><span>Projects</span></a>
+            <a href="#experience"><span>Experience</span></a>
+            <a href="#technologies"><span>Technologies</span></a>
+            <a href="#contact"><span>Contact</span></a>
             <a href="https://github.com/Betaoptics/" target="_blank">
                 <!-- <p>Github</p> -->
-                <img src="images/github-mark/github-mark-white.svg" alt="GitHub Logo" style="width:24px; height:24px;">
+                <span><img src="images/github-mark/github-mark-white.svg" alt="GitHub Logo"
+                        style="width:24px; height:24px;"></span>
             </a>
             <a href="https://www.linkedin.com/in/joonas-niinim%C3%A4ki-software-developer/" target="_blank">
                 <!-- <p>LinkedIn</p> -->
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                    alt="LinkedIn Logo" style="width:24px; height:24px;">
+                <span><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                        alt="LinkedIn Logo" style="width:24px; height:24px;"></span>
             </a>
         </nav>
     </div>
@@ -72,7 +83,7 @@
                 <p style="font-size: 20px"><q><i>AI-Powered Engineer: Tackling tech challenges, shaping tomorrow's
                             code.</i></q></p></br>
                 <p style="text-align: left;">
-                    Hellow there! Joonas Niinimäki, your friendly neighborhood software developer.
+                    Hello there! Joonas Niinimäki, your friendly neighborhood software developer.
                     My mission is to create high quality software for modern businesses using the hottest, latest
                     and cutting edge technologies to boost your business to success and prosperity.
                     With previous degree from psychology and extensive experience working with people,

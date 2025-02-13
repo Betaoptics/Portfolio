@@ -34,7 +34,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
 
             if (targetId === 'projects') {
                 const targetProject = document.getElementById(targetId);
-                const projectTopOffset = targetProject.offsetTop - (OFFSET * 2);
+                const projectTopOffset = targetProject.offsetTop - (OFFSET * 2.3);
                 window.scrollTo({
                     top: projectTopOffset,
                     behavior: 'smooth'

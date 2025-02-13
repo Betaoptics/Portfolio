@@ -23,23 +23,43 @@ header {
 }
 
 nav {
+    width: 100vw;
+    /* Forces the nav bar to take the full viewport width */
+    min-width: 100%;
     display: flex;
     justify-content: center;
     background: #007a7a;
     border-top-width: 2px;
     border-top-style: solid;
     border-top-color: #00dbdb;
+    flex-wrap: wrap;
+    /* Ensures items wrap properly on smaller screens */
 }
 
 nav a {
-    color: white;
+    /* color: white;
     text-decoration: none;
     padding: 1rem;
+    font-size: 1.1rem; */
+
+    display: inline-block;
+    padding: 1rem 2rem;
     font-size: 1.1rem;
+    color: white;
+    text-decoration: none;
+    background: #007a7a;
+    transform: skewX(-30deg);
+    transition: 0.3s;
+}
+
+nav a span {
+    display: inline-block;
+    transform: skewX(30deg);
 }
 
 nav a:hover {
     background: #006464;
+    color: #fffab3;
 }
 
 nav a:focus {
@@ -66,6 +86,202 @@ div.sticky {
     position: sticky;
     top: 0;
     z-index: 100;
+}
+
+header {
+    position: relative;
+    background: none;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    overflow: hidden;
+    height: 20vh;
+    overflow: hidden;
+}
+
+#displayBanner {
+    position: absolute;
+    top: -115px;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+}
+
+/* When device height is 1455px or less, push the banner down */
+@media (max-height: 1455px) {
+    #displayBanner {
+        top: -100px;
+        /* Adjust this value as needed */
+    }
+}
+
+/* When device height is 1455px or less, push the banner down */
+@media (max-height: 1230px) {
+    #displayBanner {
+        top: -70px;
+        /* Adjust this value as needed */
+    }
+}
+
+/* When device height is 1455px or less, push the banner down */
+@media (max-height: 1135px) {
+    #displayBanner {
+        top: -50px;
+        /* Adjust this value as needed */
+    }
+}
+
+/* When device height is 1455px or less, push the banner down */
+@media (max-height: 950px) {
+    #displayBanner {
+        top: -30px;
+        /* Adjust this value as needed */
+    }
+}
+
+/* When the device width is 900px or less */
+@media (max-width: 900px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-around;
+        /* Ensures links spread out evenly */
+    }
+
+    #displayBanner {
+        top: -20px;
+        width: 100vw;
+        /* Ensure banner fills width */
+        height: auto;
+        /* Adjusts the height dynamically */
+    }
+}
+
+/* When the device width is 900px or less */
+@media (max-width: 860px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100vw;
+
+        /* When the device width is 900px or less */
+        @media (max-width: 900px) {
+            nav {
+                flex-direction: row;
+                justify-content: space-around;
+                /* Ensures links spread out evenly */
+            }
+
+            #displayBanner {
+                top: -20px;
+                width: 100vw;
+                /* Ensure banner fills width */
+                height: auto;
+                /* Adjusts the height dynamically */
+            }
+        }
+
+        /* Ensures links spread out evenly */
+    }
+
+    #displayBanner {
+        top: -20px;
+        width: 100vw;
+        /* Ensure banner fills width */
+        height: auto;
+        /* Adjusts the height dynamically */
+    }
+}
+
+@media (max-width: 840px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-around;
+        /* Ensures links spread out evenly */
+    }
+
+    #displayBanner {
+        width: 100vw;
+        /* Ensure banner fills width */
+        height: auto;
+        /* Adjusts the height dynamically */
+    }
+}
+
+/* When device height is 1455px or less, push the banner down */
+@media (max-height: 820px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-around;
+        /* Ensures links spread out evenly */
+    }
+
+    #displayBanner {
+        top: 30px;
+        bottom: -30px;
+        /* Adjust this value as needed */
+        width: 100vw;
+        height: auto;
+    }
+}
+
+/* When device height is 1455px or less, push the banner down */
+@media (max-height: 775px) {
+    nav {
+        top: -90px;
+        flex-direction: row;
+        justify-content: space-around;
+        /* Ensures links spread out evenly */
+    }
+
+    #displayBanner {
+        top: 50px;
+        /* Adjust this value as needed */
+        width: 100vw;
+        height: auto;
+    }
+}
+
+
+#bannerContents {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2rem;
+}
+
+#bannerContents h1,
+#bannerContents p {
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+#toggleDarkMode {
+    position: absolute;
+    position: absolute;
+    /* Ensures precise positioning */
+    top: 50%;
+    /* Centers in the Y-axis */
+    right: 20px;
+    /* Moves it to the left */
+    transform: translateY(-50%);
+    /* Ensures true vertical centering */
+    /* position: relative; */
+    /* bottom: 20px; */
+    /* left: 50%; */
+    /* left: 50px; */
+    /* transform: translateX(-50%); */
+    /* transform: translateX(50px); */
+    /* Moves the toggle to the right */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    z-index: 10;
 }
 
 .gradient-box {
@@ -374,7 +590,7 @@ div.sticky {
 }
 
 .dark-mode .label {
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.0);
 }
 
 .nodejs {
@@ -660,10 +876,12 @@ footer {
 
 input:checked+.slider {
     background-color: #2196F3;
+    /* background-color: #21ecf3; */
 }
 
 input:focus+.slider {
     box-shadow: 0 0 1px #2196F3;
+    /* box-shadow: 0 0 1px #21ecf3; */
 }
 
 input:checked+.slider:before {
