@@ -110,12 +110,12 @@ div.sticky {
     }
 }
 
-.rotating {
+/* .rotating {
     -webkit-animation: rotating 4s linear infinite;
     -moz-animation: rotating 4s linear infinite;
     -ms-animation: rotating 4s linear infinite;
     -o-animation: rotating 4s linear infinite;
-}
+} */
 
 /* Centering the whole section */
 #about {
