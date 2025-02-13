@@ -1,90 +1,3 @@
-/* .content {
-    background-color: rgba(255, 255, 255, 1.0);
-    border-radius: .25em;
-    box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
-    box-sizing: border-box;
-    left: 50%;
-    padding: 10vmin;
-    position: fixed;
-    text-align: center;
-    top: 50%;
-    transform: translate(-50%, -50%);
-} */
-
-.content {
-    background-color: rgba(255, 255, 255, 1.0);
-    border-radius: 1vw;
-    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.25);
-    box-sizing: border-box;
-    min-width: 20vw;
-    width: 80vw;
-    max-width: 90vw;
-    /* Ensures flexibility */
-    max-height: 90vh;
-    /* Restricts height for potential overflow */
-    left: 50%;
-    /* padding: 5vh 5vw; */
-    position: fixed;
-    text-align: center;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 2vw;
-    overflow: hidden;
-    /* Initially hides overflow */
-}
-
-/* Ensures scrolling only applies to the non-sticky part */
-.content-inner {
-    /* Allows it to take up remaining space */
-    /* flex: 1; */
-    width: 100%;
-    max-height: 100%;
-    overflow-y: auto;
-    /* Enables vertical scrolling inside */
-    /* Prevents content from touching the scrollbar */
-    /* padding-right: 1vw; */
-    border-radius: inherit;
-    /* Keeps the inner div rounded */
-}
-
-
-/* Hide scrollbar but keep functionality */
-.content-inner::-webkit-scrollbar {
-    width: 0;
-    /* Hides the scrollbar */
-}
-
-.content-inner {
-    -ms-overflow-style: none;
-    /* Hides the scrollbar in Internet Explorer */
-    scrollbar-width: none;
-    /* Hides the scrollbar in Firefox */
-}
-
-/* Exclude .sticky from scrolling */
-.content-inner .sticky {
-    position: relative;
-    overflow: visible;
-}
-
-/* Custom Scrollbar */
-.content-inner::-webkit-scrollbar {
-    width: 0.6vw;
-}
-
-.content-inner::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 1vw;
-}
-
-.content-inner::-webkit-scrollbar-track {
-    background: transparent;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -93,9 +6,7 @@
 
 :root {
     --glow-color: cyan;
-    /* Default outer glow color */
     --inner-glow: rgba(200, 255, 255, 0.9);
-    /* Light cyan/white inner glow */
 }
 
 body {
@@ -105,7 +16,6 @@ body {
 }
 
 header {
-    /* background: #007bff; */
     background: #2a2b2b;
     color: white;
     padding: 1rem 0;
@@ -115,7 +25,6 @@ header {
 nav {
     display: flex;
     justify-content: center;
-    /* background: #0056b3; */
     background: #007a7a;
     border-top-width: 2px;
     border-top-style: solid;
@@ -130,9 +39,11 @@ nav a {
 }
 
 nav a:hover {
-    /* background: #003f8a; */
-    /* background: #008c8c; */
     background: #006464;
+}
+
+nav a:focus {
+    color: #fffab3;
 }
 
 section {
@@ -157,41 +68,202 @@ div.sticky {
     z-index: 100;
 }
 
+.content {
+    background-color: rgba(255, 255, 255, 1.0);
+    border-radius: 1vw;
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    min-width: 20vw;
+    width: 80vw;
+    max-width: 90vw;
+    max-height: 90vh;
+    left: 50%;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 2vw;
+    overflow: hidden;
+}
+
+.content-inner {
+    width: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    border-radius: inherit;
+}
+
+.content-inner::-webkit-scrollbar {
+    width: 0;
+}
+
+.content-inner {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.content-inner .sticky {
+    position: relative;
+    overflow: visible;
+}
+
+.content-inner::-webkit-scrollbar {
+    width: 0.6vw;
+}
+
+.content-inner::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 1vw;
+}
+
+.content-inner::-webkit-scrollbar-track {
+    background: transparent;
+}
+
 .project-card {
     display: inline-block;
     overflow: hidden;
     margin: 1rem;
-    /* padding: 1rem; */
     border: 1px solid #ccc;
-    /* background-color: #eef4f8b7; */
     background-color: #f4f4f4;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     width: 400px;
+    min-height: 75vh;
 }
 
-.project-card-image {
+.project-card-image-wrapper {
+    /* overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+
+}
+
+/* .project-card-image {
     transition: 1.5s;
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
-    /* This to make background image size to cover all dimension of div element.*/
 }
 
 .project-card-image:hover {
     transform: scale(1.1);
-    /* transform: translate(0, -200px); */
-    /* transform: scale(1.1, 1.0); */
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
-    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+} */
+
+.project-card-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s ease-in-out;
+}
+
+.project-card-image:hover img {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.project-card-link {
+    margin: -50px;
 }
 
 .project-card-text {
     padding: 1rem 1rem 1rem 1rem;
     /* Order: top right bottom left*/
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    padding: 1rem;
 
+}
+
+.project-card-labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+    /* margin-top: auto; */
+}
+
+.label {
+    --bg-color: #ffffff;
+    --text-color: white;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.nodejs {
+    --bg-color: #559e4b;
+}
+
+.react {
+    --bg-color: #68d2e9;
+}
+
+.bootstrap {
+    --bg-color: #7227f3;
+}
+
+.redux {
+    --bg-color: #7649b8;
+}
+
+.expressjs {
+    --bg-color: #4c4c4c;
+}
+
+.c_plus_plus {
+    --bg-color: #00589d;
+}
+
+.c_sharp {
+    --bg-color: #803788;
+}
+
+.python {
+    --bg-color: #4279a8;
+}
+
+.mongodb {
+    --bg-color: #31ee70;
+}
+
+.mysql {
+    --bg-color: #426e91;
+}
+
+.postgresql {
+    --bg-color: #426e91;
 }
 
 footer {
@@ -201,41 +273,31 @@ footer {
     border-top: 1px solid #ccc;
 }
 
-/* Animation styles */
 .coding-animation-container {
+    text-align: left;
     background-color: #1e1e1e;
-    /* color: #00ff6a; */
     color: #00dbdb;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.2rem;
     padding: 20px;
     border-radius: 8px;
-    margin: 20px auto;
-    /* Allows height expansion */
+    margin: 50px auto;
+    width: 90vw;
+    max-width: 600px;
     max-width: 50vw;
     position: relative;
     overflow: hidden;
-    /* z-index: -1; */
     z-index: 10;
-    /* Make sure it appears above other elements */
     min-height: 100px;
-    /* Allows height expansion */
-
-    /* Glowing border effect */
     border: 2px solid var(--glow-color);
     box-shadow:
         0 0 5px var(--inner-glow),
-        /* Soft white/very light cyan inner glow */
         0 0 15px var(--glow-color),
-        /* Medium cyan glow */
         0 0 30px var(--glow-color),
-        /* Stronger cyan glow */
         0 0 50px rgba(0, 255, 255, 0.6);
-    /* Outer faint cyan glow */
     animation: glow-animation 1.5s infinite alternate;
 }
 
-/* Animation to enhance the glowing effect */
 @keyframes glow-animation {
     0% {
         box-shadow:
@@ -262,7 +324,6 @@ footer {
     }
 }
 
-/* Color variations */
 .glow-red {
     --glow-color: red;
     --inner-glow: rgba(255, 200, 200, 0.9);
@@ -280,6 +341,7 @@ footer {
 
 .code-line {
     display: block;
+    white-space: pre-wrap;
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid #00ff6a;
@@ -303,43 +365,39 @@ footer {
     }
 }
 
-/* Style for the line-graph card container */
+@media (max-width: 768px) {
+    .coding-animation-container {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    .code-line {
+        font-size: 1rem;
+    }
+}
+
 #line-graph-card {
     width: 100%;
     max-width: 800px;
-    /* Limit the max width of the card */
     height: 400px;
-    /* Set a fixed height for the graph */
     margin: 20px auto;
-    /* Center the card on the page */
-    /* Optional: background color */
     border-radius: 10px;
-    /* Optional: rounded corners for the card */
     overflow: hidden;
     border: 1px solid #ccc;
-    /* background-color: #eef4f8b7; */
     background-color: #f4f4f4;
-    /* Prevents anything from overflowing */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    /* Optional: shadow for aesthetics */
 }
 
-/* Wrapper inside the line-graph card */
 #line-graph-wrapper {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    /* Ensures that no content overflows from the wrapper */
 }
 
-/* Style for the canvas inside the line-graph card */
 #line-graph-canvas {
     width: 100%;
-    /* Make the canvas fill the container width */
     height: 100%;
-    /* Make the canvas fill the container height */
     display: block;
-    /* Remove any extra space below the canvas */
 }
 
 .toggle-btn {
@@ -358,14 +416,12 @@ footer {
 }
 
 .dark-mode {
-    /* background-color: #333; */
     background-color: #222;
     color: white;
 }
 
 .dark-mode canvas {
     background: #111;
-    /* border: 1px solid #555; */
 }
 
 .dark-mode .email-link {
@@ -382,31 +438,24 @@ footer {
 }
 
 .dark-mode .content {
-    /* background-color: #333; */
     background-color: #222;
     color: white;
 }
 
 .dark-mode .content-inner {
-    /* background-color: #333; */
     background-color: #222;
     color: white;
 }
 
-/* Exclude the coding animation container from dark mode */
 .dark-mode .coding-animation-container {
     background-color: #1e1e1e;
-    /* Keep original background */
     color: #00dbdb;
-    /* Keep original text color */
 }
 
 .dark-mode .coding-animation-container .code-line {
     color: #00dbdb;
-    /* Retain the text color inside the animation container */
 }
 
-/* Ensure no other dark mode styles are applied to .coding-animation-container */
 .dark-mode .coding-animation-container * {
     color: inherit;
     background-color: inherit;
@@ -417,42 +466,6 @@ footer {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
 }
 
-/* .buttons {
-    margin-bottom: 10px;
-}
-
-button {
-    margin: 5px;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #0056b3;
-} */
-
-/* #foreground {
-    position: relative;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    margin: 50px auto;
-    width: 80%;
-    max-width: 800px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-} */
-
-/* #backgroundCanvas {
-    height: 80vh;
-} */
-
-/* The switch - the box around the slider */
 .switch {
     position: relative;
     display: inline-block;
@@ -460,14 +473,12 @@ button:hover {
     height: 34px;
 }
 
-/* Hide default HTML checkbox */
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-/* The slider */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -506,7 +517,6 @@ input:checked+.slider:before {
     transform: translateX(26px);
 }
 
-/* Rounded sliders */
 .slider.round {
     border-radius: 34px;
 }
@@ -536,13 +546,11 @@ input:checked+.slider:before {
 
 .gallery img {
     width: 20vw;
-    /* Each image takes up full width */
     flex-shrink: 0;
     object-fit: cover;
     position: relative;
 }
 
-/* Position navigation buttons inside the images */
 .arrow-button {
     position: absolute;
     top: 50%;
@@ -561,12 +569,10 @@ input:checked+.slider:before {
     opacity: 1;
 }
 
-/* Position prev button inside the leftmost image */
 .left {
     left: 0.5%;
 }
 
-/* Position next button inside the rightmost image */
 .right {
     right: 0.5%;
 }
@@ -575,22 +581,18 @@ input:checked+.slider:before {
     box-sizing: border-box;
 }
 
-/* Position the image container (needed to position the left and right arrows) */
 .image-container {
     position: relative;
 }
 
-/* Hide the images by default */
 .mySlides {
     display: none;
 }
 
-/* Add a pointer when hovering over the thumbnail images */
 .cursor {
     cursor: pointer;
 }
 
-/* Next & previous buttons */
 .prev,
 .next {
     cursor: pointer;
@@ -607,20 +609,17 @@ input:checked+.slider:before {
     -webkit-user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 10;
 }
 
-/* Number text (1/3 etc) */
 .numbertext {
     color: #f2f2f2;
     font-size: 12px;
@@ -629,7 +628,6 @@ input:checked+.slider:before {
     top: 0;
 }
 
-/* Container for image text */
 .caption-container {
     text-align: center;
     background-color: #222;
@@ -643,13 +641,11 @@ input:checked+.slider:before {
     clear: both;
 }
 
-/* Six columns side by side */
 .column {
     float: left;
     width: 16.66%;
 }
 
-/* Add a transparency effect for thumnbail images */
 .demo {
     opacity: 0.6;
 }
