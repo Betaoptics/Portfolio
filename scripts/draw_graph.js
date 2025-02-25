@@ -76,13 +76,33 @@ const Python = [
 ];
 
 const Javascript = [
+    { x: 2018, y: 2 },
+    { x: 2019, y: 2 },
+    { x: 2020, y: 5 },
+    { x: 2021, y: 13 },
+    { x: 2022, y: 20 },
+    { x: 2024, y: 25 },
+    { x: 2025, y: 40 }
+];
+
+const React = [
     { x: 2018, y: 0 },
-    { x: 2019, y: 99 },
-    { x: 2020, y: 61 },
-    { x: 2021, y: 20 },
-    { x: 2022, y: 7 },
-    { x: 2024, y: 34 },
-    { x: 2025, y: 59 }
+    { x: 2019, y: 0 },
+    { x: 2020, y: 20 },
+    { x: 2021, y: 35 },
+    { x: 2022, y: 40 },
+    { x: 2024, y: 45 },
+    { x: 2025, y: 60 }
+];
+
+const NodeJS = [
+    { x: 2018, y: 0 },
+    { x: 2019, y: 0 },
+    { x: 2020, y: 0 },
+    { x: 2021, y: 15 },
+    { x: 2022, y: 20 },
+    { x: 2024, y: 35 },
+    { x: 2025, y: 40 }
 ];
 
 let test = [
@@ -154,7 +174,7 @@ let test = [
 //     { x: 2024, y: 62 },
 // ]);
 
-let technologies = { C_Plus_Plus, C_Sharp, Python, Java, Javascript, test };
+let technologies = { C_Plus_Plus, C_Sharp, Python, Java, Javascript, React, NodeJS };
 // console.log("DATAS: ", technologies);
 
 let newdata;
@@ -167,6 +187,8 @@ let deltaTime = date - initialDate;
 //     // console.log("Testcopy: ", testCopy);
 //     test = testCopy;
 // }
+
+console.log(technologies);
 
 for (let key in technologies) {
     let dataset = technologies[key];
@@ -190,158 +212,66 @@ for (let key in technologies) {
 // }
 
 const ctx = document.getElementById('line-graph-canvas').getContext('2d');
+const colors = [
+    'rgba(255, 0, 255, 0.2)',
+    'rgba(0, 0, 255, 0.2)',
+    'rgba(0, 255, 0, 0.2)',
+    'rgba(255, 0, 0, 0.2)',
+    'rgba(255, 255, 0, 0.2)',
+    'rgba(0, 255, 255, 0.2)',
+    'rgba(253, 143, 0, 0.2)'
+];
+
+const borderColors = [
+    'purple', 'blue', 'green', 'red', 'yellow', 'cyan', 'orange'
+];
+
+const datasets = Object.keys(technologies).map((key, index) => {
+    const colorIndex = index % colors.length; // Ensure dynamic cycling of colors
+    return {
+        label: key === 'C_Plus_Plus' ? 'C++' : key === 'C_Sharp' ? 'C#' : key,
+        data: technologies[key],
+        borderColor: borderColors[colorIndex],
+        borderWidth: 2,
+        fill: true,
+        backgroundColor: colors[colorIndex],
+        pointRadius: 0,
+        pointBackgroundColor: 'red',
+        hidden: false
+    };
+});
+
 const lineChart = new Chart(ctx, {
     type: 'line',
     data: {
-        //     datasets: [
-        //         {
-        //             label: 'test',
-        //             data: test,
-        //             borderColor: 'cyan',
-        //             borderWidth: 2,
-        //             fill: true,
-        //             backgroundColor: 'rgba(0, 255, 255, 0.2)',
-        //             pointRadius: 0,
-        //             pointBackgroundColor: 'red',
-        //             hidden: false,
-
-        //         },
-        //         {
-        //             label: 'C++',
-        //             data: C_Plus_Plus,
-        //             borderColor: 'purple',
-        //             borderWidth: 2,
-        //             fill: true,
-        //             backgroundColor: 'rgba(255, 0, 255, 0.2)',
-        //             pointRadius: 0,
-        //             pointBackgroundColor: 'red',
-        //             hidden: false,
-
-        //         },
-        //         {
-        //             label: 'C#',
-        //             data: C_Sharp,
-        //             borderColor: 'green',
-        //             borderColor: 'blue',
-        //             borderWidth: 2,
-        //             fill: true,
-        //             backgroundColor: 'rgba(0, 0, 255, 0.2)',
-        //             pointRadius: 0,
-        //             pointBackgroundColor: 'orange',
-        //             hidden: false,
-        //         },
-        //         {
-        //             label: 'Java',
-        //             data: Java,
-        //             borderColor: 'red',
-        //             borderWidth: 2,
-        //             fill: true,
-        //             backgroundColor: 'rgba(255, 0, 0, 0.2)',
-        //             pointRadius: 0,
-        //             pointBackgroundColor: 'orange',
-        //             hidden: false,
-        //         },
-        //         {
-        //             label: 'Python',
-        //             data: Python,
-        //             borderColor: 'green',
-        //             borderWidth: 2,
-        //             fill: true,
-        //             backgroundColor: 'rgba(0, 255, 0, 0.2)',
-        //             pointRadius: 0,
-        //             pointBackgroundColor: 'orange',
-        //             hidden: false,
-        //         },
-        //         {
-        //             label: 'Javascript',
-        //             data: Javascript,
-        //             borderColor: 'yellow',
-        //             borderWidth: 2,
-        //             fill: true,
-        //             backgroundColor: 'rgba(255, 255, 0, 0.2)',
-        //             pointRadius: 0,
-        //             pointBackgroundColor: 'orange',
-        //             hidden: false,
-        //             decimation: false,
-        //         }
-        //     ]
-        // },
-
-        datasets: Object.keys(technologies).map((key, index) => ({
-            label: key === 'C_Plus_Plus' ? 'C++' : key === 'C_Sharp' ? 'C#' : key,
-            data: technologies[key],
-            borderColor: ['purple', 'blue', 'green', 'red', 'yellow', 'cyan'][index % 6],
-            borderWidth: 2,
-            fill: true,
-            // backgroundColor: 'rgba(255, 255, 255, 0.2)',
-            backgroundColor: [
-                'rgba(255, 0, 255, 0.2)',
-                'rgba(0, 0, 255, 0.2)',
-                'rgba(0, 255, 0, 0.2)',
-                'rgba(255, 0, 0, 0.2)',
-                'rgba(255, 255, 0, 0.2)',
-                'rgba(0, 255, 255, 0.2)',
-            ][index % 6],
-            pointRadius: 5,
-            pointBackgroundColor: 'red',
-            pointRadius: 0,
-            hidden: false
-        }))
+        datasets: datasets
     },
     options: {
         responsive: true,
         plugins: {
-            decimation: {
-                enabled: false,
-                algorithm: 'lttb',
-            },
             title: {
                 display: true,
                 text: 'Programming language skill over time',
                 font: {
                     size: 20,
                     weight: 'bold'
-                },
-                // color: 'white',
-            },
+                }
+            }
         },
-        // legend: {
-        //     labels: {
-        //         fontColor: 'white',
-        //     }
-        // },
-        // legend: {
-        //     onClick: (e, legendItem, legend) => {
-        //         e.preventDefault();
-        //         // const test = legend;
-        //         const index = legendItem.datasetIndex;
-        //         lineChart.data.datasets[index].hidden = !lineChart.data.datasets[index].hidden;
-        //         lineChart.update();
-        //     }
-        // },
         scales: {
             x: {
                 type: 'linear',
                 position: 'bottom',
-                options: {
-                    plugins: {
-                        decimation: {
-                            enabled: false,
-                            algorithm: 'lttb',
-                        },
-                    },
-                },
                 title: {
                     display: true,
-                    text: 'Years (a)',
+                    text: 'Years',
                     font: {
-                        weight: 'bold',
-                        fontColor: 'white'
+                        weight: 'bold'
                     }
                 },
                 ticks: {
                     callback: function (value) {
-                        return Number(value).toFixed(0); // Removes comma formatting
+                        return Number(value).toFixed(0);
                     }
                 },
                 suggestedMin: 2018,
@@ -358,31 +288,208 @@ const lineChart = new Chart(ctx, {
                     }
                 },
                 grid: {
-                    color: '#464747' // e.g., '#aa3099'
+                    color: '#464747'
                 }
             }
         }
     }
 });
 
-// function toggleDataset(index) {
-//     lineChart.data.datasets[index].hidden = !lineChart.data.datasets[index].hidden;
-//     lineChart.update();
-// }
+// OLD SCRIPT CODE
 
-// function toggleDataset(index) {
-//     lineChart.data.datasets[index].hidden = !lineChart.data.datasets[index].hidden;
-//     lineChart.update();
-// }
+// const lineChart = new Chart(ctx, {
+//     type: 'line',
+//     data: {
+//         //     datasets: [
+//         //         {
+//         //             label: 'test',
+//         //             data: test,
+//         //             borderColor: 'cyan',
+//         //             borderWidth: 2,
+//         //             fill: true,
+//         //             backgroundColor: 'rgba(0, 255, 255, 0.2)',
+//         //             pointRadius: 0,
+//         //             pointBackgroundColor: 'red',
+//         //             hidden: false,
 
-// function createButtons() {
-//     const buttonContainer = document.getElementById('buttonContainer');
-//     lineChart.data.datasets.forEach((dataset, index) => {
-//         const button = document.createElement('button');
-//         button.textContent = dataset.label;
-//         button.onclick = () => toggleDataset(index);
-//         buttonContainer.appendChild(button);
-//     });
-// }
+//         //         },
+//         //         {
+//         //             label: 'C++',
+//         //             data: C_Plus_Plus,
+//         //             borderColor: 'purple',
+//         //             borderWidth: 2,
+//         //             fill: true,
+//         //             backgroundColor: 'rgba(255, 0, 255, 0.2)',
+//         //             pointRadius: 0,
+//         //             pointBackgroundColor: 'red',
+//         //             hidden: false,
 
-// createButtons();
+//         //         },
+//         //         {
+//         //             label: 'C#',
+//         //             data: C_Sharp,
+//         //             borderColor: 'green',
+//         //             borderColor: 'blue',
+//         //             borderWidth: 2,
+//         //             fill: true,
+//         //             backgroundColor: 'rgba(0, 0, 255, 0.2)',
+//         //             pointRadius: 0,
+//         //             pointBackgroundColor: 'orange',
+//         //             hidden: false,
+//         //         },
+//         //         {
+//         //             label: 'Java',
+//         //             data: Java,
+//         //             borderColor: 'red',
+//         //             borderWidth: 2,
+//         //             fill: true,
+//         //             backgroundColor: 'rgba(255, 0, 0, 0.2)',
+//         //             pointRadius: 0,
+//         //             pointBackgroundColor: 'orange',
+//         //             hidden: false,
+//         //         },
+//         //         {
+//         //             label: 'Python',
+//         //             data: Python,
+//         //             borderColor: 'green',
+//         //             borderWidth: 2,
+//         //             fill: true,
+//         //             backgroundColor: 'rgba(0, 255, 0, 0.2)',
+//         //             pointRadius: 0,
+//         //             pointBackgroundColor: 'orange',
+//         //             hidden: false,
+//         //         },
+//         //         {
+//         //             label: 'Javascript',
+//         //             data: Javascript,
+//         //             borderColor: 'yellow',
+//         //             borderWidth: 2,
+//         //             fill: true,
+//         //             backgroundColor: 'rgba(255, 255, 0, 0.2)',
+//         //             pointRadius: 0,
+//         //             pointBackgroundColor: 'orange',
+//         //             hidden: false,
+//         //             decimation: false,
+//         //         }
+//         //     ]
+//         // },
+//         datasets: Object.keys(technologies).map((key, index) => ({
+//             label: key === 'C_Plus_Plus' ? 'C++' : key === 'C_Sharp' ? 'C#' : key,
+//             data: technologies[key],
+//             borderColor: ['purple', 'blue', 'green', 'red', 'yellow', 'cyan', 'orange'][index % 7],
+//             borderWidth: 2,
+//             fill: true,
+//             // backgroundColor: 'rgba(255, 255, 255, 0.2)',
+//             backgroundColor: [
+//                 'rgba(255, 0, 255, 0.2)',
+//                 'rgba(0, 0, 255, 0.2)',
+//                 'rgba(0, 255, 0, 0.2)',
+//                 'rgba(255, 0, 0, 0.2)',
+//                 'rgba(255, 255, 0, 0.2)',
+//                 'rgba(0, 255, 255, 0.2)',
+//                 'rgba(253, 143, 0, 0.2)',
+//             ][index % 7],
+//             pointRadius: 5,
+//             pointBackgroundColor: 'red',
+//             pointRadius: 0,
+//             hidden: false
+//         }))
+//     },
+//     options: {
+//         responsive: true,
+//         plugins: {
+//             decimation: {
+//                 enabled: false,
+//                 algorithm: 'lttb',
+//             },
+//             title: {
+//                 display: true,
+//                 text: 'Programming language skill over time',
+//                 font: {
+//                     size: 20,
+//                     weight: 'bold'
+//                 },
+//                 // color: 'white',
+//             },
+//         },
+//         // legend: {
+//         //     labels: {
+//         //         fontColor: 'white',
+//         //     }
+//         // },
+//         // legend: {
+//         //     onClick: (e, legendItem, legend) => {
+//         //         e.preventDefault();
+//         //         // const test = legend;
+//         //         const index = legendItem.datasetIndex;
+//         //         lineChart.data.datasets[index].hidden = !lineChart.data.datasets[index].hidden;
+//         //         lineChart.update();
+//         //     }
+//         // },
+//         scales: {
+//             x: {
+//                 type: 'linear',
+//                 position: 'bottom',
+//                 options: {
+//                     plugins: {
+//                         decimation: {
+//                             enabled: false,
+//                             algorithm: 'lttb',
+//                         },
+//                     },
+//                 },
+//                 title: {
+//                     display: true,
+//                     text: 'Years (a)',
+//                     font: {
+//                         weight: 'bold',
+//                         fontColor: 'white'
+//                     }
+//                 },
+//                 ticks: {
+//                     callback: function (value) {
+//                         return Number(value).toFixed(0); // Removes comma formatting
+//                     }
+//                 },
+//                 suggestedMin: 2018,
+//                 suggestedMax: new Date().getFullYear() || date,
+//             },
+//             y: {
+//                 beginAtZero: true,
+//                 max: 100,
+//                 title: {
+//                     display: true,
+//                     text: 'Skill (%)',
+//                     font: {
+//                         weight: 'bold'
+//                     }
+//                 },
+//                 grid: {
+//                     color: '#464747' // e.g., '#aa3099'
+//                 }
+//             }
+//         }
+//     }
+// });
+
+// // function toggleDataset(index) {
+// //     lineChart.data.datasets[index].hidden = !lineChart.data.datasets[index].hidden;
+// //     lineChart.update();
+// // }
+
+// // function toggleDataset(index) {
+// //     lineChart.data.datasets[index].hidden = !lineChart.data.datasets[index].hidden;
+// //     lineChart.update();
+// // }
+
+// // function createButtons() {
+// //     const buttonContainer = document.getElementById('buttonContainer');
+// //     lineChart.data.datasets.forEach((dataset, index) => {
+// //         const button = document.createElement('button');
+// //         button.textContent = dataset.label;
+// //         button.onclick = () => toggleDataset(index);
+// //         buttonContainer.appendChild(button);
+// //     });
+// // }
+
+// // createButtons();
