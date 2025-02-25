@@ -24,9 +24,10 @@ document.querySelectorAll('nav a').forEach(anchor => {
                 // Scroll with offset for other sections
                 const targetSection = document.getElementById(targetId);
                 if (targetSection) {
-                    const topOffset = targetSection.offsetTop - OFFSET;
+                    const topOffset = targetSection.offsetTop - (OFFSET * 2.5);
                     window.scrollTo({
                         top: topOffset,
+                        // top: projectTopOffset,
                         behavior: 'smooth'
                     });
                 }
@@ -34,7 +35,16 @@ document.querySelectorAll('nav a').forEach(anchor => {
 
             if (targetId === 'projects') {
                 const targetProject = document.getElementById(targetId);
-                const projectTopOffset = targetProject.offsetTop - (OFFSET * 2.3);
+                const projectTopOffset = targetProject.offsetTop - (OFFSET * 2.5);
+                window.scrollTo({
+                    top: projectTopOffset,
+                    behavior: 'smooth'
+                });
+            }
+
+            if (targetId === 'experience') {
+                const targetProject = document.getElementById(targetId);
+                const projectTopOffset = targetProject.offsetTop - (OFFSET * 2.5);
                 window.scrollTo({
                     top: projectTopOffset,
                     behavior: 'smooth'
