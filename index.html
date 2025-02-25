@@ -15,8 +15,8 @@
 
     <div class="sticky">
         <header>
-            <img id="displayBanner" src="images/linkedin_banner_1.png"
-                style="margin: 0rem; padding: 0rem; width: 100vw; height: auto;">
+            <img style="position: relative; align-items: center; top: -60px;" id="displayBanner"
+                src="images/linkedin_banner_1.png" style="margin: 0rem; padding: 0rem; width: 100vw; height: auto;">
             <!-- <div id="bannerContents">
                 <h1>My Portfolio</h1>
                 <p>Welcome to my personal portfolio website</p>
@@ -49,8 +49,8 @@
             <a href="#technologies">Technologies</a>
             <a href="#contact">Contact</a> -->
             <a href="#about"><span>About</span></a>
-            <a href="#projects"><span>Projects</span></a>
             <a href="#experience"><span>Experience</span></a>
+            <a href="#projects"><span>Projects</span></a>
             <a href="#technologies"><span>Technologies</span></a>
             <a href="#contact"><span>Contact</span></a>
             <a href="https://github.com/Betaoptics/" target="_blank">
@@ -74,6 +74,7 @@
     <div id="foreground">
         <section id="about">
             <h2>About Me</h2>
+            <p>(WIP)</p>
             <div class="profile-image-container">
                 <div class="gradient-border">
                     <img class="profile-img" src="images/image1.png" alt="Profile Image">
@@ -207,6 +208,11 @@
             </div>
         </div> -->
 
+        <section id="experience">
+            <h2>Experience</h2>
+            <p>placeholder</p>
+        </section>
+
         <section id="projects" class="sections">
             <h2>Projects</h2>
             <div class="project-card-image-wrapper">
@@ -219,7 +225,7 @@
                         </a>
                     </div>
                     <div class="project-card-text">
-                        <h1 style="color:#007a7a; font-size: 30px; text-transform: uppercase;">Shopping cart app</h1>
+                        <h1 class="project-card-h1">Shopping cart app</h1>
                         <p style="text-align: start;">
                             Shopping cart fullstack RestAPI project simulating an sopping cart app.
                             It creates a history that can be used to follow spending and calory consumption.
@@ -229,8 +235,9 @@
                         <div class="project-card-labels"> <!-- New wrapper for labels -->
                             <span class="label react">React</span>
                             <span class="label nodejs">Node.js</span>
-                            <span class="label bootstrap">Bootstrap</span>
                             <span class="label expressjs">Express.js</span>
+                            <span class="label redux">Redux</span>
+                            <span class="label bootstrap">Bootstrap</span>
                             <span class="label mongodb">MongoDB</span>
                         </div>
                     </div>
@@ -244,7 +251,7 @@
                         </a>
                     </div>
                     <div class="project-card-text">
-                        <h1 style="color:#007a7a; font-size: 30px; text-transform: uppercase;">Book app</h1>
+                        <h1 class="project-card-h1">Book app</h1>
                         <p style="text-align: start;">
                             This book store app was fullstack RestAPI demo for a company.
                             It has all the basic Create, Read, Update and Delete functions inside it.
@@ -268,7 +275,7 @@
                         </a>
                     </div>
                     <div class="project-card-text">
-                        <h1 style="color:#007a7a; font-size: 30px; text-transform: uppercase;">Parser demo</h1>
+                        <h1 class="project-card-h1">Parser demo</h1>
                         <p style="text-align: start;">
                             This parser-demo was a demo project for a company.
                             The goal of the project was to get data from an API, parse
@@ -280,28 +287,172 @@
                         </div>
                     </div>
                 </div>
+                <div class="project-card">
+                    <div id="#project-img1" class="project-card-image-special">
+                        <img src="images/sheip.png" alt="img4">
+                    </div>
+                    <div class="project-card-text">
+                        <h1 class="project-card-h1">Sheip</h1>
+                        <p style="text-align: start;">
+                            This is an ongoing to-be commercial grade gym, fitness and lifestyle application that allows
+                            the planning
+                            of exercise routines, dieting, chatting, creating gym communities and other features.
+                        </p>
+                        </br>
+                        <div class="project-card-labels"> <!-- New wrapper for labels -->
+                            <span class="label typescript">Typescript</span>
+                            <span class="label svelte">Svelte</span>
+                            <span class="label drizzle-orm">Dirzzle-ORM</span>
+                            <span class="label expressjs">Express.js</span>
+                            <span class="label tailwind">Tailwind</span>
+                            <span class="label postgresql">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div id="#project-img1" class="project-card-image-special">
+                        <img src="images/godot.png" alt="img5">
+                    </div>
+                    <div class="project-card-text">
+                        <h1 class="project-card-h1">Project Finalday</h1>
+                        <p style="text-align: start;">
+                            An ongoing post-apocalyptic zombie survival FPS video game with procedurially generated
+                            world environment,
+                            quests, crafting, base building and terraforming mechanics.
+                        </p>
+                        </br>
+                        <div class="project-card-labels"> <!-- New wrapper for labels -->
+                            <span class="label godot">Godot</span>
+                            <span class="label c_sharp">C#</span>
+                            <span class="label c_plus_plus">C++</span>
+                            <span class="label blender">Blender</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div id="#project-img1" class="project-card-image-special">
+                        <img src="images/warframebuilder.png" alt="img6">
+                    </div>
+                    <div class="project-card-text">
+                        <h1 class="project-card-h1">Warframe-builder</h1>
+                        <p style="text-align: start;">
+                            An ongoing build creator and stats calculator for a video game Warframe.
+                            It utilizes complex math to allow the optimization of builds.
+                        </p>
+                        </br>
+                        <div class="project-card-labels"> <!-- New wrapper for labels -->
+                            <span class="label react">React</span>
+                            <span class="label nodejs">Node.js</span>
+                            <span class="label expressjs">Express.js</span>
+                            <span class="label tailwind">Tailwind</span>
+                            <span class="label azure">Azure</span>
+                            <span class="label mysql">MySQL</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="experience">
+        <!-- <section id="experience">
             <h2>Experience</h2>
             <p>placeholder</p>
-        </section>
+        </section> -->
 
         <section id="technologies" class="sections">
             <h2>Technologies</h2>
-            <p>placeholder</p>
+            <h3>Programming languages & libraries<span style="color:black">:</span></h3>
+            <div style="text-align: center;">
+                <div class="technologies-text-container ">
+                    <div class="project-card-labels"> <!-- New wrapper for labels -->
+                        <span class="label technology-label react">React</span>
+                        <span class="label technology-label nodejs">Node.js</span>
+                        <span class="label technology-label expressjs">Express.js</span>
+                        <span class="label technology-label typescript">Typescript</span>
+                        <span class="label technology-label javascript">Javascript</span>
+                        <span class="label technology-label python">Python</span>
+                        <span class="label technology-label java">Java</span>
+                        <span class="label technology-label c_plus_plus">C++</span>
+                        <span class="label technology-label c_sharp">C#</span>
+                        <span class="label technology-label c_language">C</span>
+                        <span class="label technology-label elixir">Elixir</span>
+                        <span class="label technology-label php">PHP</span>
+                        <span class="label technology-label laravel">Laravel</span>
+                        <span class="label technology-label godot">Godot</span>
+                        <span class="label technology-label xml">Xml</span>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h3>CI/CD & environment<span style="color:black">:</span></h3>
+                <!-- <div id="contents" class="technologies-text-container ">
+                    <p>
+                        Docker, GIT, GitHub, Gitlab, Azure, AWS, Postman, WSL2, 
+                        XAMPP, Apache Kafka, Linux, WSL, WSL2.
+                    </p>
+                </div> -->
+                <div class="technologies-text-container ">
+                    <div class="project-card-labels"> <!-- New wrapper for labels -->
+                        <span class="label technology-label docker">Docker</span>
+                        <span class="label technology-label git">GIT</span>
+                        <span class="label technology-label github">GitHub</span>
+                        <span class="label technology-label gitlab">Gitlab</span>
+                        <span class="label technology-label azure">Azure</span>
+                        <span class="label technology-label aws">AWS</span>
+                        <span class="label technology-label wsl2">WSL2</span>
+                        <span class="label technology-label xampp">XAMPP</span>
+                        <span class="label technology-label apache">Apache</span>
+                        <span class="label technology-label linux">Linux</span>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h3>Other<span style="color:black">:</span></h3>
+                <div class="technologies-text-container ">
+                    <div class="project-card-labels"> <!-- New wrapper for labels -->
+                        <span class="label technology-label mysql">MySQL</span>
+                        <span class="label technology-label postgresql">PosgreSQL</span>
+                        <span class="label technology-label mongodb">MongoDB</span>
+                        <span class="label technology-label jira">Jira</span>
+                        <span class="label technology-label ssh">SSH</span>
+                        <span class="label technology-label bash">Bash</span>
+                        <span class="label technology-label chatgpt">ChatGTP</span>
+                        <span class="label technology-label deepseek">Deepseek</span>
+                        <span class="label technology-label gan">GANs</span>
+                        <span class="label technology-label other">Other</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Feel free to reach out to me via email at
-            <p>Contact: <a href="placeholder@example.com" class="email-link">placeholder@example.com</a></p>
-        </section>
+        <div style="text-align: center;">
+            <section id="contact">
+                <h2>Contact</h2>
+                <div id="contents" style="display: inline-block; text-align: left;">
+                    <p>Feel free to reach out to me at:
+                    <p>Email:
+                        <a href="jooonashniinimaki@outlook.com" class="email-link">joonashniinimaki@outlook.com
+                        </a>
+                    </p>
+                    <p>Phone:
+                        +358 44 231 8010
+                    </p>
+                    <div>
+                        <p class="cv-btn-wrapper">
+                            <!-- <embed id="pdfEmbed" src="assets/Joonas_Niinimäki_CV_TEMPLATE.pdf" type="application/pdf"
+                            width="400" height="600"> -->
+                            <a id="downloadBtn" href="assets/Joonas_Niinimäki_CV_TEMPLATE.pdf"
+                                download="Joonas_Niinimäki_CV_TEMPLATE.pdf">
+                                <button class="cv-btn">Get my CV</button>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>&copy; 2025 Joonas Niinmimäki. All rights reserved.</p>
     </footer>
 
     <!-- <script>
@@ -344,6 +495,7 @@
     <!-- <script src="scripts/code_background.js"></script> -->
     <!-- <script src="scripts/gallery.js"></script> -->
     <!-- <script src="scripts/temp.js"></script> -->
+    <scrip src="scripts/download_cv.js"></scrip>
     <script src="scripts/dynamic_text_color.js"></script>
     <script>
         function toggleDarkMode() {

@@ -22,10 +22,14 @@ header {
     text-align: center;
 }
 
+h3 {
+    color: rgb(184, 0, 184);
+}
+
 nav {
-    width: 100vw;
+    /* width: 100vw; */
     /* Forces the nav bar to take the full viewport width */
-    min-width: 100%;
+    /* min-width: 100%; */
     display: flex;
     justify-content: center;
     background: #007a7a;
@@ -82,17 +86,21 @@ section {
     min-height: 20vh;
 }
 
-#projects {
-    background-color: #e9e9e9;
+#about {
+    padding-top: 10px;
+}
+
+#experience {
+    background-color: rgb(243, 243, 243);
     color: #000;
 }
 
 #technologies {
-    background-color: #e9e9e9;
+    background-color: rgb(243, 243, 243);
     color: #000;
 }
 
-.dark-mode #projects {
+.dark-mode #experience {
     background-color: #1a1a1a;
     color: #fff;
 }
@@ -476,6 +484,13 @@ header {
     min-height: 710px;
 }
 
+.project-card-h1 {
+    color: #007a7a;
+    color: #009b9b;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
 .project-card-image-wrapper {
     /* overflow: hidden;
     display: flex;
@@ -527,6 +542,15 @@ header {
     cursor: pointer;
     background-color: black;
     color: #fff;
+}
+
+.project-card-image-special img {
+    transition: transform 1.5s ease-in-out;
+}
+
+.project-card-image-special:hover img {
+    transform: scale(1);
+    cursor: default;
 }
 
 .btn {
@@ -593,9 +617,18 @@ header {
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); */
 }
 
-.dark-mode .label {
-    border: 2px solid rgba(255, 255, 255, 0.0);
+.technology-label {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
+
+.dark-mode .technology-label {
+    /* border: 2px solid rgb(146, 146, 146); */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+}
+
+/* .dark-mode .label {
+    border: 2px solid rgba(255, 255, 255, 0.0);
+} */
 
 .nodejs {
     --bg-color: #559e4b;
@@ -605,8 +638,40 @@ header {
     --bg-color: #68d2e9;
 }
 
+.typescript {
+    --bg-color: #3877c2;
+}
+
+.laravel {
+    --bg-color: #ba2117;
+}
+
+.svelte {
+    --bg-color: #f02d16;
+}
+
+.java {
+    --bg-color: #dc5f21;
+}
+
+.javascript {
+    --bg-color: #f0dc4e;
+}
+
+.javascript-alt {
+    --bg-color: #f15d45;
+}
+
+.drizzle-orm {
+    --bg-color: #b0dc57;
+}
+
 .bootstrap {
     --bg-color: #7227f3;
+}
+
+.tailwind {
+    --bg-color: #2aafca;
 }
 
 .redux {
@@ -625,8 +690,28 @@ header {
     --bg-color: #803788;
 }
 
+.c_language {
+    --bg-color: #aabbce;
+}
+
 .python {
     --bg-color: #4279a8;
+}
+
+.elixir {
+    --bg-color: #401658;
+}
+
+.godot {
+    --bg-color: #8b9fac;
+}
+
+.php {
+    --bg-color: #4f5b93;
+}
+
+.xml {
+    --bg-color: #30cbf7;
 }
 
 .mongodb {
@@ -634,11 +719,107 @@ header {
 }
 
 .mysql {
-    --bg-color: #426e91;
+    --bg-color: #015b85;
 }
 
 .postgresql {
     --bg-color: #426e91;
+}
+
+.blender {
+    --bg-color: #e17420;
+}
+
+.azure {
+    --bg-color: #44b7e8;
+}
+
+.docker {
+    --bg-color: #1e66f6;
+}
+
+.git {
+    --bg-color: #f64d26;
+}
+
+.github {
+    --bg-color: #000000;
+}
+
+.gitlab {
+    --bg-color: #fc6d26;
+}
+
+.aws {
+    --bg-color: #141f2e;
+}
+
+.postman {
+    --bg-color: #fe6b36;
+}
+
+.wsl2 {
+    --bg-color: #e95421;
+}
+
+.xampp {
+    --bg-color: #fa7116;
+}
+
+.apache {
+    --bg-color: #c1214e;
+}
+
+.linux {
+    --bg-color: #1d91c6;
+}
+
+.jira {
+    --bg-color: #2684ff;
+}
+
+.ssh {
+    --bg-color: #0b0f58;
+}
+
+.bash {
+    --bg-color: #080821;
+}
+
+.chatgpt {
+    --bg-color: #565656;
+}
+
+.deepseek {
+    --bg-color: #4561e8;
+}
+
+.gan {
+    --bg-color: #007ddf;
+}
+
+.other {
+    --bg-color: #c3c3c3;
+}
+
+.cv-btn-wrapper {
+    text-align: center;
+    display: block;
+}
+
+.cv-btn {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    /* transition: transform 1.5s ease-in-out; */
+}
+
+.cv-btn:hover {
+    /* transform: scale(1.1); */
+    cursor: pointer;
 }
 
 footer {
@@ -841,6 +1022,17 @@ footer {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
 }
 
+.dark-mode .cv-btn {
+
+    /* color: #fff;
+    border: 1px solid #ccc;
+    background-color: #111; */
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+
+}
+
 .switch {
     position: relative;
     display: inline-block;
@@ -1030,4 +1222,10 @@ input:checked+.slider:before {
 .active,
 .demo:hover {
     opacity: 1;
+}
+
+.technologies-text-container {
+    display: inline-block;
+    text-align: left;
+    max-width: 40vw;
 }
