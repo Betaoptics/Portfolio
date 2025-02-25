@@ -10,48 +10,73 @@
 //     { x: 7, y: 60 }
 // ];
 
+function formatDate(day, month, year) {
+    return `${String(day).padStart(2, '0')}-${String(month).padStart(2, '0')}-${year}`;
+}
+
+let currentDate = new Date();
+let currentDay = new Date().getDate();
+let currentMonth = new Date().getMonth() + 1;
+let currentYear = new Date().getFullYear();
+let date = new Date().getFullYear();
+
+console.log("currentDate is: ", currentDate);
+console.log("currentDay is: ", currentDay);
+console.log("currentMonth is: ", currentMonth);
+console.log("currentYear is: ", currentYear);
+
+function transformData(data) {
+    return data.map((entry, index) => {
+        let formattedDate = index === data.length - 1
+            ? formatDate(currentDay, currentMonth, currentYear)
+            : formatDate(1, 1, entry.x);
+
+        return { x: formattedDate, y: entry.y };
+    });
+}
+
 const C_Plus_Plus = [
-    { x: 2018, y: 10 },
-    { x: 2019, y: 15 },
-    { x: 2020, y: 7 },
-    { x: 2021, y: 12 },
-    { x: 2022, y: 20 },
-    { x: 2024, y: 25 },
-    { x: 2025, y: 18 }
-];
-
-const C_Sharp = [
-    { x: 2018, y: 5 },
-    { x: 2019, y: 20 },
-    { x: 2020, y: 15 },
-    { x: 2021, y: 8 },
-    { x: 2022, y: 15 },
-    { x: 2024, y: 50 },
-    { x: 2025, y: 8 }
-];
-
-const Java = [
-    { x: 2018, y: 56 },
-    { x: 2019, y: 49 },
-    { x: 2020, y: 67 },
-    { x: 2021, y: 70 },
-    { x: 2022, y: 30 },
-    { x: 2024, y: 17 },
-    { x: 2025, y: 60 }
-];
-
-const Python = [
-    { x: 2018, y: 17 },
-    { x: 2019, y: 48 },
-    { x: 2020, y: 23 },
-    { x: 2021, y: 27 },
-    { x: 2022, y: 81 },
-    { x: 2024, y: 31 },
+    { x: 2018, y: 0 },
+    { x: 2019, y: 5 },
+    { x: 2020, y: 5 },
+    { x: 2021, y: 10 },
+    { x: 2022, y: 10 },
+    { x: 2024, y: 20 },
     { x: 2025, y: 25 }
 ];
 
+const C_Sharp = [
+    { x: 2018, y: 0 },
+    { x: 2019, y: 10 },
+    { x: 2020, y: 10 },
+    { x: 2021, y: 12 },
+    { x: 2022, y: 12 },
+    { x: 2024, y: 12 },
+    { x: 2025, y: 12 }
+];
+
+const Java = [
+    { x: 2018, y: 0 },
+    { x: 2019, y: 5 },
+    { x: 2020, y: 5 },
+    { x: 2021, y: 20 },
+    { x: 2022, y: 30 },
+    { x: 2024, y: 32 },
+    { x: 2025, y: 35 }
+];
+
+const Python = [
+    { x: 2018, y: 0 },
+    { x: 2019, y: 0 },
+    { x: 2020, y: 10 },
+    { x: 2021, y: 35 },
+    { x: 2022, y: 40 },
+    { x: 2024, y: 45 },
+    { x: 2025, y: 45 }
+];
+
 const Javascript = [
-    { x: 2018, y: 48 },
+    { x: 2018, y: 0 },
     { x: 2019, y: 99 },
     { x: 2020, y: 61 },
     { x: 2021, y: 20 },
@@ -61,7 +86,7 @@ const Javascript = [
 ];
 
 let test = [
-    { x: 2018, y: 15 },
+    { x: 2018, y: 0 },
     { x: 2019, y: 40 },
     { x: 2020, y: 80 },
     { x: 2021, y: 10 },
@@ -70,20 +95,78 @@ let test = [
     // { x: 2025, y: 59 }
 ];
 
+// const C_Plus_Plus = transformData([
+//     { x: 2018, y: 10 },
+//     { x: 2019, y: 15 },
+//     { x: 2020, y: 7 },
+//     { x: 2021, y: 12 },
+//     { x: 2022, y: 20 },
+//     { x: 2024, y: 25 },
+//     { x: 2025, y: 18 }
+// ]);
+
+// const C_Sharp = transformData([
+//     { x: 2018, y: 5 },
+//     { x: 2019, y: 20 },
+//     { x: 2020, y: 15 },
+//     { x: 2021, y: 8 },
+//     { x: 2022, y: 15 },
+//     { x: 2024, y: 50 },
+//     { x: 2025, y: 8 }
+// ]);
+
+// const Java = transformData([
+//     { x: 2018, y: 56 },
+//     { x: 2019, y: 49 },
+//     { x: 2020, y: 67 },
+//     { x: 2021, y: 70 },
+//     { x: 2022, y: 30 },
+//     { x: 2024, y: 17 },
+//     { x: 2025, y: 60 }
+// ]);
+
+// const Python = transformData([
+//     { x: 2018, y: 17 },
+//     { x: 2019, y: 48 },
+//     { x: 2020, y: 23 },
+//     { x: 2021, y: 27 },
+//     { x: 2022, y: 81 },
+//     { x: 2024, y: 31 },
+//     { x: 2025, y: 25 }
+// ]);
+
+// const Javascript = transformData([
+//     { x: 2018, y: 48 },
+//     { x: 2019, y: 99 },
+//     { x: 2020, y: 61 },
+//     { x: 2021, y: 20 },
+//     { x: 2022, y: 7 },
+//     { x: 2024, y: 34 },
+//     { x: 2025, y: 59 }
+// ]);
+
+// let test = transformData([
+//     { x: 2018, y: 15 },
+//     { x: 2019, y: 40 },
+//     { x: 2020, y: 80 },
+//     { x: 2021, y: 10 },
+//     { x: 2022, y: 25 },
+//     { x: 2024, y: 62 },
+// ]);
+
 let technologies = { C_Plus_Plus, C_Sharp, Python, Java, Javascript, test };
 // console.log("DATAS: ", technologies);
 
 let newdata;
-let date = new Date().getFullYear();
 let initialDate = 2018;
 let deltaTime = date - initialDate;
 
-if (deltaTime > test.length) {
-    newdata = { x: 2024, y: 0 };
-    let testCopy = [...test, newdata];
-    // console.log("Testcopy: ", testCopy);
-    test = testCopy;
-}
+// if (deltaTime > test.length) {
+//     newdata = { x: 2024, y: 0 };
+//     let testCopy = [...test, newdata];
+//     // console.log("Testcopy: ", testCopy);
+//     test = testCopy;
+// }
 
 for (let key in technologies) {
     let dataset = technologies[key];
@@ -214,7 +297,7 @@ const lineChart = new Chart(ctx, {
             },
             title: {
                 display: true,
-                text: 'Programming language usage over time',
+                text: 'Programming language skill over time',
                 font: {
                     size: 20,
                     weight: 'bold'
@@ -269,7 +352,7 @@ const lineChart = new Chart(ctx, {
                 max: 100,
                 title: {
                     display: true,
-                    text: 'Usage (%)',
+                    text: 'Skill (%)',
                     font: {
                         weight: 'bold'
                     }

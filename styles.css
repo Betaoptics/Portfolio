@@ -584,6 +584,16 @@ header {
     margin: -50px;
 }
 
+.project-card-title-link {
+    color: #009b9b;
+    text-decoration-line: none;
+}
+
+.project-card-title-link:visited {
+    color: #009b9b;
+    text-decoration-line: none;
+}
+
 .project-card-text {
     padding: 1rem 1rem 1rem 1rem;
     /* Order: top right bottom left*/
@@ -1228,4 +1238,40 @@ input:checked+.slider:before {
     display: inline-block;
     text-align: left;
     max-width: 40vw;
+}
+
+.column-wrapper {
+    display: flex;
+    justify-content: center;
+    /* Centers the container */
+    align-items: flex-start;
+}
+
+.column-container {
+    /* width: 100%; */
+    width: 70vw;
+    /* Limits the width to 60% of the viewport */
+    /* width: 65vw; */
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-column {
+    text-align: left;
+    /* width: 45%; */
+    /* Adjust width to control spacing */
+}
+
+.right-column {
+    text-align: right;
+    /* width: 45%; */
+    /* Adjust width to control spacing */
+}
+
+.experience-h1 {
+    /* color: purple; */
+    color: rgb(184, 0, 184);
+    /* text-decoration-line: underline;
+    text-decoration-color: aqua; */
 }
